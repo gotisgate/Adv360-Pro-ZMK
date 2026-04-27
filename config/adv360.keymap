@@ -7,6 +7,18 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+  macros {
+    ctrl_shift_d: macro_ctrl_shift_d {
+      compatible = "zmk,behavior-macro";
+      label = "CTRL_SHIFT_D";
+      #binding-cells = <0>;
+      bindings = <&kp LC(LS(D))>;
+    };
+  };
+};
+
+
+/ {
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -21,17 +33,6 @@
           bindings = <&kp>, <&kp>;
       };
     };
-
-    / {
-  macros {
-    ctrl_shift_d: macro_ctrl_shift_d {
-      compatible = "zmk,behavior-macro";
-      label = "CTRL_SHIFT_D";
-      #binding-cells = <0>;
-      bindings = <&kp LC(LS(D))>;
-    };
-  };
-};
 
   keymap {
     compatible = "zmk,keymap";
